@@ -6,7 +6,7 @@ class PaintCalculator:
     def __init__(self):
         self.base_price = 12000
 
-    def calculate_price(self, part_name, color_name, discount=0):
+    def calculate_price(self, part_name, color_name, discount=0, premium=False):
         part_name = part_name.lower()
         color_name = color_name.lower()
 
@@ -24,6 +24,10 @@ class PaintCalculator:
 
 
         total_price = self.base_price * part_coefficient * color_coefficient
+
+
+        if premium:
+            total_price *= 1.2
 
 
         if discount > 0:
